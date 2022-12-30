@@ -39,7 +39,7 @@ Upgrade Step 15/15: katello:upgrades:3.18:add_cvv_export_history_metadata.   Suc
 2022-05-11 15:25:02 [NOTICE] [post] All hooks in group post finished
 [root@sat6 ~]#
 *** commnads **
-
+<sub>
 [root@sat6 ~]# hammer subscription list --organization "msa"
 ---|------|------|------|----------|---------|---------|------------|----------|----------|---------
 ID | UUID | NAME | TYPE | CONTRACT | ACCOUNT | SUPPORT | START DATE | END DATE | QUANTITY | CONSUMED
@@ -69,6 +69,7 @@ ID | NAME      | DESCRIPTION                               | ORGANIZATION | REPO
 1  | el7_repos | Various repositories to use with CentOS 7 | msa         | 0            |
 ---|-----------|-------------------------------------------|--------------|--------------|-----------
 [root@sat6 ~]#
+</sub>
 
 [root@sat6 ~]# mkdir /etc/pki/rpm-gpg/import/
 [root@sat6 ~]#  cd /etc/pki/rpm-gpg/import/
@@ -662,7 +663,7 @@ hammer repository create \
 [root@sat6 import]#
 
 
-  #####Register Clinet 
+<b>Register Clinet</b> 
 
 [root@srv1 ~]# ssh-copy-id -i /root/.ssh/id_rsa.pub sat6
 The authenticity of host 'sat6 (192.168.0.69)' can't be established.
