@@ -41,21 +41,21 @@ Upgrade Step 15/15: katello:upgrades:3.18:add_cvv_export_history_metadata.   Suc
 
 
 <h1> hammer Commands </h1>
-[root@sat6 ~]# hammer subscription list --organization "msa"
+<b>[root@sat6 ~]# hammer subscription list --organization "msa"</b>
 ---|------|------|------|----------|---------|---------|------------|----------|----------|---------
 ID | UUID | NAME | TYPE | CONTRACT | ACCOUNT | SUPPORT | START DATE | END DATE | QUANTITY | CONSUMED
 ---|------|------|------|----------|---------|---------|------------|----------|----------|---------
 [root@sat6 ~]#
 
-root@sat6 ~]# hammer subscription list --organization "msa"
+<b>root@sat6 ~]# hammer subscription list --organization "msa"</b>
 ---|------|------|------|----------|---------|---------|------------|----------|----------|---------
 ID | UUID | NAME | TYPE | CONTRACT | ACCOUNT | SUPPORT | START DATE | END DATE | QUANTITY | CONSUMED
 ---|------|------|------|----------|---------|---------|------------|----------|----------|---------
-[root@sat6 ~]# hammer product create \
+<b>[root@sat6 ~]# hammer product create \
 > --name "el7_repos" \
-> --description "Various repositories to use with CentOS 7" --organization "msa"
+> --description "Various repositories to use with CentOS 7" --organization "msa"</b>
 Product created.
-[root@sat6 ~]# hammer product list --organization "msa"
+<b>root@sat6 ~]# hammer product list --organization "msa"</b>
 ---|-----------|-------------------------------------------|--------------|--------------|-----------
 ID | NAME      | DESCRIPTION                               | ORGANIZATION | REPOSITORIES | SYNC STATE
 ---|-----------|-------------------------------------------|--------------|--------------|-----------
@@ -63,7 +63,7 @@ ID | NAME      | DESCRIPTION                               | ORGANIZATION | REPO
 ---|-----------|-------------------------------------------|--------------|--------------|-----------
 [root@sat6 ~]#
 
-[root@sat6 ~]# hammer product list --organization "msa"
+<b>root@sat6 ~]# hammer product list --organization "msa"</b>
 ---|-----------|-------------------------------------------|--------------|--------------|-----------
 ID | NAME      | DESCRIPTION                               | ORGANIZATION | REPOSITORIES | SYNC STATE
 ---|-----------|-------------------------------------------|--------------|--------------|-----------
@@ -86,10 +86,10 @@ Saving to: â€˜RPM-GPG-KEY-CentOS-7â€™
 2022-05-12 16:06:25 (3.02 MB/s) - â€˜RPM-GPG-KEY-CentOS-7â€™ saved [1690/1690]
 
 [root@sat6 import]#
-
+<b>
 [root@sat6 import]# hammer gpg create \
 > --key "RPM-GPG-KEY-CentOS-7" \
-> --name "RPM-GPG-KEY-CentOS-7" --organization "msa"
+> --name "RPM-GPG-KEY-CentOS-7" --organization "msa" </b>
 The gpg sub-command is deprecated and will be removed in one of the future versions. Please use the content-credentials command instead.
 GPG Key created.
 [root@sat6 import]#
