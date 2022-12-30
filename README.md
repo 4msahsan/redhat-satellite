@@ -40,33 +40,33 @@ Upgrade Step 15/15: katello:upgrades:3.18:add_cvv_export_history_metadata.   Suc
 [root@sat6 ~]#
 *** commnads **
 
-[root@sat6 ~]# hammer subscription list --organization "phsa"
+[root@sat6 ~]# hammer subscription list --organization "msa"
 ---|------|------|------|----------|---------|---------|------------|----------|----------|---------
 ID | UUID | NAME | TYPE | CONTRACT | ACCOUNT | SUPPORT | START DATE | END DATE | QUANTITY | CONSUMED
 ---|------|------|------|----------|---------|---------|------------|----------|----------|---------
 [root@sat6 ~]#
 
-root@sat6 ~]# hammer subscription list --organization "phsa"
+root@sat6 ~]# hammer subscription list --organization "msa"
 ---|------|------|------|----------|---------|---------|------------|----------|----------|---------
 ID | UUID | NAME | TYPE | CONTRACT | ACCOUNT | SUPPORT | START DATE | END DATE | QUANTITY | CONSUMED
 ---|------|------|------|----------|---------|---------|------------|----------|----------|---------
 [root@sat6 ~]# hammer product create \
 > --name "el7_repos" \
-> --description "Various repositories to use with CentOS 7" --organization "phsa"
+> --description "Various repositories to use with CentOS 7" --organization "msa"
 Product created.
-[root@sat6 ~]# hammer product list --organization "phsa"
+[root@sat6 ~]# hammer product list --organization "msa"
 ---|-----------|-------------------------------------------|--------------|--------------|-----------
 ID | NAME      | DESCRIPTION                               | ORGANIZATION | REPOSITORIES | SYNC STATE
 ---|-----------|-------------------------------------------|--------------|--------------|-----------
-1  | el7_repos | Various repositories to use with CentOS 7 | phsa         | 0            |
+1  | el7_repos | Various repositories to use with CentOS 7 | msa         | 0            |
 ---|-----------|-------------------------------------------|--------------|--------------|-----------
 [root@sat6 ~]#
 
-[root@sat6 ~]# hammer product list --organization "phsa"
+[root@sat6 ~]# hammer product list --organization "msa"
 ---|-----------|-------------------------------------------|--------------|--------------|-----------
 ID | NAME      | DESCRIPTION                               | ORGANIZATION | REPOSITORIES | SYNC STATE
 ---|-----------|-------------------------------------------|--------------|--------------|-----------
-1  | el7_repos | Various repositories to use with CentOS 7 | phsa         | 0            |
+1  | el7_repos | Various repositories to use with CentOS 7 | msa         | 0            |
 ---|-----------|-------------------------------------------|--------------|--------------|-----------
 [root@sat6 ~]#
 
@@ -88,14 +88,14 @@ Saving to: â€˜RPM-GPG-KEY-CentOS-7â€™
 
 [root@sat6 import]# hammer gpg create \
 > --key "RPM-GPG-KEY-CentOS-7" \
-> --name "RPM-GPG-KEY-CentOS-7" --organization "phsa"
+> --name "RPM-GPG-KEY-CentOS-7" --organization "msa"
 The gpg sub-command is deprecated and will be removed in one of the future versions. Please use the content-credentials command instead.
 GPG Key created.
 [root@sat6 import]#
 
 [root@sat6 import]# hammer gpg create \
 > --key "RPM-GPG-KEY-EPEL-7Server" \
-> --name "RPM-GPG-KEY-EPEL-7Server" --organization "phsa"
+> --name "RPM-GPG-KEY-EPEL-7Server" --organization "msa"
 The gpg sub-command is deprecated and will be removed in one of the future versions. Please use the content-credentials command instead.
 GPG Key created.
 
@@ -129,7 +129,7 @@ Total wall clock time: 0.7s
 Downloaded: 1 files, 1.9K in 0s (406 MB/s)
 [root@sat6 import]# hammer gpg create \
 > --key "RPM-GPG-KEY-mysql" \
-> --name "RPM-GPG-KEY-mysql" --organization "phsa"
+> --name "RPM-GPG-KEY-mysql" --organization "msa"
 The gpg sub-command is deprecated and will be removed in one of the future versions. Please use the content-credentials command instead.
 GPG Key created.
 [root@sat6 import]#
@@ -149,7 +149,7 @@ Saving to: â€˜RPM-GPG-KEY-ZABBIXâ€™
 
 [root@sat6 import]# hammer gpg create \
 > --key "RPM-GPG-KEY-ZABBIX" \
-> --name "RPM-GPG-KEY-ZABBIX" --organization "phsa"
+> --name "RPM-GPG-KEY-ZABBIX" --organization "msa"
 The gpg sub-command is deprecated and will be removed in one of the future versions. Please use the content-credentials command instead.
 GPG Key created.
 [root@sat6 import]#
@@ -168,7 +168,7 @@ Saving to: â€˜RPM-GPG-KEY-remiâ€™
 
 [root@sat6 import]# hammer gpg create \
 > --key "RPM-GPG-KEY-remi" \
-> --name "RPM-GPG-KEY-remi" --organization "phsa"
+> --name "RPM-GPG-KEY-remi" --organization "msa"
 The gpg sub-command is deprecated and will be removed in one of the future versions. Please use the content-credentials command instead.
 GPG Key created.
 [root@sat6 import]#
@@ -187,14 +187,14 @@ Saving to: â€˜GPG-KEY-elasticsearchâ€™
 
 [root@sat6 import]# hammer gpg create \
 > --key "GPG-KEY-elasticsearch" \
-> --name "GPG-KEY-elasticsearch" --organization "phsa"
+> --name "GPG-KEY-elasticsearch" --organization "msa"
 The gpg sub-command is deprecated and will be removed in one of the future versions. Please use the content-credentials command instead.
 GPG Key created.
 [root@sat6 import]#
 
 
 The gpg sub-command is deprecated and will be removed in one of the future versions. Please use the content-credentials command instead.
-[root@sat6 import]# hammer gpg list  --organization "phsa"
+[root@sat6 import]# hammer gpg list  --organization "msa"
 The gpg sub-command is deprecated and will be removed in one of the future versions. Please use the content-credentials command instead.
 ---|-------------------------
 ID | NAME
@@ -218,7 +218,7 @@ hammer repository create \
   --download-policy "on_demand" \
   --gpg-key "RPM-GPG-KEY-CentOS-7" \
   --url "http://mirror.centos.org/centos/7/os/x86_64/" \
-  --organization "phsa"
+  --organization "msa"
 [root@sat6 ~]# bash el7-repo.sh
 Repository created.
 [root@sat6 ~]#
@@ -235,7 +235,7 @@ Repository created.
   --download-policy "on_demand" \
   --gpg-key "RPM-GPG-KEY-CentOS-7" \
   --url "http://mirror.centos.org/centos/7/extras/x86_64/" \
-  --organization "phsa"
+  --organization "msa"
 [root@sat6 ~]#
 
 
@@ -249,7 +249,7 @@ hammer repository create \
   --gpg-key "RPM-GPG-KEY-CentOS-7" \
   --url "http://mirror.centos.org/centos/7/updates/x86_64/" \
   --mirror-on-sync "no" \
-  --organization "phsa"
+  --organization "msa"
 
 [root@sat6 ~]# bash el7-update.sh
 Repository created.
@@ -264,7 +264,7 @@ hammer repository create \
   --download-policy "on_demand" \
   --gpg-key "RPM-GPG-KEY-EPEL-7Server" \
   --url "https://dl.fedoraproject.org/pub/epel/7Server/x86_64/" \
-  --organization "phsa"
+  --organization "msa"
 
 [root@sat6 ~]# bash epel.sh
 Repository created.
@@ -279,7 +279,7 @@ hammer repository create \
   --download-policy "on_demand" \
   --gpg-key "RPM-GPG-KEY-mysql" \
   --url "https://repo.mysql.com/yum/mysql-5.7-community/el/7/x86_64/" \
-  --organization "phsa"
+  --organization "msa"
 [root@sat6 ~]# bash msql.sh
 Repository created.
 [root@sat6 ~]#
@@ -293,7 +293,7 @@ hammer repository create \
   --download-policy "on_demand" \
   --gpg-key "RPM-GPG-KEY-remi" \
   --url "https://mirrors.ukfast.co.uk/sites/remi/enterprise/7/php72/x86_64/" \
-  --organization "phsa"
+  --organization "msa"
 
 [root@sat6 ~]# bash remi.sh
 Repository created.
@@ -307,12 +307,12 @@ Repository created.
   --download-policy "on_demand" \
   --gpg-key "RPM-GPG-KEY-ZABBIX" \
   --url "http://repo.zabbix.com/zabbix/3.0/rhel/7/x86_64/" \
-  --organization "phsa"
+  --organization "msa"
 
 [root@sat6 ~]# bash zabbix.sh
 Repository created.
 
-root@sat6 ~]# hammer repository list --organization "phsa"
+root@sat6 ~]# hammer repository list --organization "msa"
 ---|--------------------|-----------|--------------|-------------------------------------------------------------------
 ID | NAME               | PRODUCT   | CONTENT TYPE | URL
 ---|--------------------|-----------|--------------|-------------------------------------------------------------------
@@ -330,17 +330,17 @@ ID | NAME               | PRODUCT   | CONTENT TYPE | URL
 hammer content-view create \
   --name "el7_content" \
   --description "Content view for CentOS 7" \
-  --organization "phsa"
+  --organization "msa"
 
 [root@sat6 ~]# bash content_view.sh
 Content view created.
 
 
-[root@sat6 ~]# hammer product list --organization "phsa"
+[root@sat6 ~]# hammer product list --organization "msa"
 ---|-----------|-------------------------------------------|--------------|--------------|------------------
 ID | NAME      | DESCRIPTION                               | ORGANIZATION | REPOSITORIES | SYNC STATE
 ---|-----------|-------------------------------------------|--------------|--------------|------------------
-1  | el7_repos | Various repositories to use with CentOS 7 | phsa         | 7            | Syncing Complete.
+1  | el7_repos | Various repositories to use with CentOS 7 | msa         | 7            | Syncing Complete.
 ---|-----------|-------------------------------------------|--------------|--------------|------------------
 [root@sat6 ~]#
 
@@ -359,7 +359,7 @@ for i in $(seq 1 16); do \
   hammer content-view add-repository \
   --name "el7_content" \
   --product "el7_repos" \
-  --organization "phsa" \
+  --organization "msa" \
   --repository-id "$i"; \
   done
 
@@ -371,10 +371,10 @@ hammer lifecycle-environment create \
   --name "stable" \
   --label "stable" \
   --prior "Library" \
-  --organization "phsa"
+  --organization "msa"
 
 
-[root@sat6 ~]# hammer lifecycle-environment list --organization "phsa"
+[root@sat6 ~]# hammer lifecycle-environment list --organization "msa"
 ---|---------|--------
 ID | NAME    | PRIOR
 ---|---------|--------
@@ -387,7 +387,7 @@ root@sat6 ~]# cat pusblish_content_view.sh
 hammer content-view publish \
   --name "el7_content" \
   --description "Publishing repositories" \
-  --organization "phsa"
+  --organization "msa"
 
 [root@sat6 ~]# bash pusblish_content_view.sh
 [.....................................................................................................................................................................] [100%]
@@ -395,7 +395,7 @@ hammer content-view publish \
 
 [root@sat6 ~]# bash pusblish_content_view.sh
 [.....................................................................................................................................................................] [100%]
-[root@sat6 ~]# hammer content-view version list --organization "phsa"
+[root@sat6 ~]# hammer content-view version list --organization "msa"
 ---|-------------------------------|---------|-------------------------|-----------------------
 ID | NAME                          | VERSION | DESCRIPTION             | LIFECYCLE ENVIRONMENTS
 ---|-------------------------------|---------|-------------------------|-----------------------
@@ -412,10 +412,10 @@ hammer content-view version promote \
   --content-view "el7_content" \
   --version "1.0" \
   --to-lifecycle-environment "stable" \
-  --organization "phsa"
+  --organization "msa"
 [root@sat6 ~]#
 
-[root@sat6 ~]# hammer content-view version list --organization "phsa"
+[root@sat6 ~]# hammer content-view version list --organization "msa"
 ---|-------------------------------|---------|-------------------------|-----------------------
 ID | NAME                          | VERSION | DESCRIPTION             | LIFECYCLE ENVIRONMENTS
 ---|-------------------------------|---------|-------------------------|-----------------------
@@ -432,13 +432,13 @@ hammer activation-key create \
   --lifecycle-environment "stable" \
   --content-view "el7_content" \
   --unlimited-hosts \
-  --organization "phsa"
+  --organization "msa"
 
 [root@sat6 ~]# bash activationKey.sh
 Activation key created.
 [root@sat6 ~]#
 
-[root@sat6 ~]# hammer activation-key list --organization "phsa"
+[root@sat6 ~]# hammer activation-key list --organization "msa"
 ---|---------|----------------|-----------------------|-------------
 ID | NAME    | HOST LIMIT     | LIFECYCLE ENVIRONMENT | CONTENT VIEW
 ---|---------|----------------|-----------------------|-------------
@@ -447,7 +447,7 @@ ID | NAME    | HOST LIMIT     | LIFECYCLE ENVIRONMENT | CONTENT VIEW
 [root@sat6 ~]#
 
 
-[root@sat6 ~]# hammer subscription list --organization "phsa"
+[root@sat6 ~]# hammer subscription list --organization "msa"
 ---|----------------------------------|-----------|----------|----------|---------|---------|---------------------|---------------------|-----------|---------
 ID | UUID                             | NAME      | TYPE     | CONTRACT | ACCOUNT | SUPPORT | START DATE          | END DATE            | QUANTITY  | CONSUMED
 ---|----------------------------------|-----------|----------|----------|---------|---------|---------------------|---------------------|-----------|---------
@@ -462,21 +462,21 @@ hammer activation-key add-subscription \
   --name "el7-key" \
   --quantity "1" \
   --subscription-id "1" \
-  --organization "phsa"
+  --organization "msa"
 
 ***
 
 [root@sat6 ~]# hammer product create \
 > --name "el8_repos" \
 > --description "Repositories to use with CentOS 8 Linux" \
-> --organization "phsa"
+> --organization "msa"
 Product created.
-[root@sat6 ~]# hammer product list --organization "phsa"
+[root@sat6 ~]# hammer product list --organization "msa"
 ---|-----------|-------------------------------------------|--------------|--------------|------------------
 ID | NAME      | DESCRIPTION                               | ORGANIZATION | REPOSITORIES | SYNC STATE
 ---|-----------|-------------------------------------------|--------------|--------------|------------------
-1  | el7_repos | Various repositories to use with CentOS 7 | phsa         | 7            | Syncing Complete.
-2  | el8_repos | Repositories to use with CentOS 8 Linux   | phsa         | 0            |
+1  | el7_repos | Various repositories to use with CentOS 7 | msa         | 7            | Syncing Complete.
+2  | el8_repos | Repositories to use with CentOS 8 Linux   | msa         | 0            |
 ---|-----------|-------------------------------------------|--------------|--------------|------------------
 [root@sat6 ~]#
 
@@ -502,7 +502,7 @@ GPG Key created.
 [root@sat6 import]# cat gpg-key-el8.sh
 hammer gpg create \
  --key "RPM-GPG-KEY-CentOS-Official" \
-  --name "RPM-GPG-KEY-CentOS-8" --organization "phsa"
+  --name "RPM-GPG-KEY-CentOS-8" --organization "msa"
 [root@sat6 import]#
 
 [root@sat6 import]# vim /root/.hammer/cli.modules.d/foreman.yml
@@ -518,7 +518,7 @@ hammer repository create \
   --gpg-key "RPM-GPG-KEY-CentOS-8" \
   --url "http://centos.mirror.liquidtelecom.com/8/BaseOS/x86_64/os/" \
   --mirror-on-sync "no" \
-  --organization "phsa"
+  --organization "msa"
 [root@sat6 import]#
 
 [root@sat6 import]# bash centos8_AppsStream.sh
@@ -533,11 +533,11 @@ hammer repository create \
   --gpg-key "RPM-GPG-KEY-CentOS-8" \
   --url "http://centos.mirror.liquidtelecom.com/8/AppStream/x86_64/os/" \
   --mirror-on-sync "no" \
-  --organization "phsa"
+  --organization "msa"
 [root@sat6 import]#
 
 
-root@sat6 import]# hammer repository list --organization "phsa"
+root@sat6 import]# hammer repository list --organization "msa"
 ---|-------------------------|-----------|--------------|-------------------------------------------------------------------
 ID | NAME                    | PRODUCT   | CONTENT TYPE | URL
 ---|-------------------------|-----------|--------------|-------------------------------------------------------------------
@@ -563,7 +563,7 @@ hammer repository create \
   --gpg-key "RPM-GPG-KEY-CentOS-8" \
   --url "http://centos.mirror.liquidtelecom.com/8/BaseOS/x86_64/os/" \
   --mirror-on-sync "no" \
-  --organization "phsa"
+  --organization "msa"
   
   
   
@@ -578,7 +578,7 @@ hammer repository create \
   --gpg-key "RPM-GPG-KEY-CentOS-8" \
   --url "http://centos.mirror.liquidtelecom.com/8/AppStream/x86_64/os/" \
   --mirror-on-sync "no" \
-  --organization "phsa"
+  --organization "msa"
   
    
   http://linuxsoft.cern.ch/centos-vault/6.10/os/x86_64/RPM-GPG-KEY-CentOS-6 
@@ -593,44 +593,44 @@ hammer repository create \
   --gpg-key "RPM-GPG-KEY-CentOS-6" \
   -- url "http://linuxsoft.cern.ch/centos-vault/6.10/os/" \
   --mirror-on-sync "no" \
-  --organization "phsa"
+  --organization "msa"
   
   
   [root@sat6 ~]# bash create_prod6.sh
 Product created.
-[root@sat6 ~]# hammer product list --organization "phsa"
+[root@sat6 ~]# hammer product list --organization "msa"
 ---|-----------|-------------------------------------------|--------------|--------------|--------------                                         ----
 ID | NAME      | DESCRIPTION                               | ORGANIZATION | REPOSITORIES | SYNC STATE                                            
 ---|-----------|-------------------------------------------|--------------|--------------|--------------                                         ----
-3  | el6_repos | Repositories to use with CentOS 6 Linux   | phsa         | 0            |                                                       
-1  | el7_repos | Various repositories to use with CentOS 7 | phsa         | 7            | Syncing Compl                                         ete.
-2  | el8_repos | Repositories to use with CentOS 8 Linux   | phsa         | 2            |                                                       
+3  | el6_repos | Repositories to use with CentOS 6 Linux   | msa         | 0            |                                                       
+1  | el7_repos | Various repositories to use with CentOS 7 | msa         | 7            | Syncing Compl                                         ete.
+2  | el8_repos | Repositories to use with CentOS 8 Linux   | msa         | 2            |                                                       
 ---|-----------|-------------------------------------------|--------------|--------------|--------------                                         ----
-[root@sat6 ~]# hammer product list --organization "phsa"
+[root@sat6 ~]# hammer product list --organization "msa"
 ---|-----------|-------------------------------------------|--------------|--------------|------------------
 ID | NAME      | DESCRIPTION                               | ORGANIZATION | REPOSITORIES | SYNC STATE
 ---|-----------|-------------------------------------------|--------------|--------------|------------------
-3  | el6_repos | Repositories to use with CentOS 6 Linux   | phsa         | 0            |
-1  | el7_repos | Various repositories to use with CentOS 7 | phsa         | 7            | Syncing Complete.
-2  | el8_repos | Repositories to use with CentOS 8 Linux   | phsa         | 2            |
+3  | el6_repos | Repositories to use with CentOS 6 Linux   | msa         | 0            |
+1  | el7_repos | Various repositories to use with CentOS 7 | msa         | 7            | Syncing Complete.
+2  | el8_repos | Repositories to use with CentOS 8 Linux   | msa         | 2            |
 ---|-----------|-------------------------------------------|--------------|--------------|------------------
 [root@sat6 ~]# cat create_prod6.sh
 hammer product create \
  --name "el6_repos" \
  --description "Repositories to use with CentOS 6 Linux" \
- --organization "phsa"
+ --organization "msa"
 [root@sat6 ~]#
 
 hammer gpg create \
  --key "RPM-GPG-KEY-CentOS-6" \
-  --name "RPM-GPG-KEY-CentOS-6" --organization "phsa"
+  --name "RPM-GPG-KEY-CentOS-6" --organization "msa"
 
 [root@sat6 import]# hammer gpg create \
 > --key "RPM-GPG-KEY-CentOS-6" \
-> --name "RPM-GPG-KEY-CentOS-6" --organization "phsa"
+> --name "RPM-GPG-KEY-CentOS-6" --organization "msa"
 The gpg sub-command is deprecated and will be removed in one of the future versions. Please use the content-credentials command instead.
 GPG Key created.
-[root@sat6 import]# hammer gpg list  --organization "phsa"
+[root@sat6 import]# hammer gpg list  --organization "msa"
 The gpg sub-command is deprecated and will be removed in one of the future versions. Please use the content-credentials command instead.
 ---|-------------------------
 ID | NAME
@@ -658,7 +658,7 @@ hammer repository create \
   --gpg-key "RPM-GPG-KEY-CentOS-6" \
   --url "http://linuxsoft.cern.ch/centos-vault/6.10/os/" \
   --mirror-on-sync "no" \
-  --organization "phsa"
+  --organization "msa"
 [root@sat6 import]#
 
 
@@ -761,7 +761,7 @@ Complete!
 
  el7-key
  
- # subscription-manager register --org="phsa" --activationkey="el7-key"
+ # subscription-manager register --org="msa" --activationkey="el7-key"
  
  [root@srv1 ~]# [root@client ~]# yum -y install http://fedorapeople.org/groups/katello/releases/yum/3.2/client/el7/x86_64/katello-client-repos-latest.rpm
 -bash: [root@client: command not found
