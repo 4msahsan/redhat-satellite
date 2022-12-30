@@ -1,5 +1,5 @@
 # redhat-satellite
-
+<pre>
 Executing: foreman-rake upgrade:run
 =============================================
 Upgrade Step 1/15: katello:correct_repositories. This may take a long while.
@@ -918,4 +918,4 @@ Proot@srv1 ~]#
 
 
 
-
+</pre>
