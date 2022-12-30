@@ -1,6 +1,6 @@
 # redhat-satellite
 <pre>
-Executing: foreman-rake upgrade:run
+<b>Executing: foreman-rake upgrade:run</b>
 =============================================
 Upgrade Step 1/15: katello:correct_repositories. This may take a long while.
 =============================================
@@ -38,8 +38,9 @@ Upgrade Step 15/15: katello:upgrades:3.18:add_cvv_export_history_metadata.   Suc
   The full log is at /var/log/foreman-installer/katello.log
 2022-05-11 15:25:02 [NOTICE] [post] All hooks in group post finished
 [root@sat6 ~]#
-*** commnads **
-<sub>
+
+
+<h1> hammer Commands </h1>
 [root@sat6 ~]# hammer subscription list --organization "msa"
 ---|------|------|------|----------|---------|---------|------------|----------|----------|---------
 ID | UUID | NAME | TYPE | CONTRACT | ACCOUNT | SUPPORT | START DATE | END DATE | QUANTITY | CONSUMED
@@ -69,7 +70,6 @@ ID | NAME      | DESCRIPTION                               | ORGANIZATION | REPO
 1  | el7_repos | Various repositories to use with CentOS 7 | msa         | 0            |
 ---|-----------|-------------------------------------------|--------------|--------------|-----------
 [root@sat6 ~]#
-</sub>
 
 [root@sat6 ~]# mkdir /etc/pki/rpm-gpg/import/
 [root@sat6 ~]#  cd /etc/pki/rpm-gpg/import/
